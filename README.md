@@ -9,7 +9,7 @@ Then for example you can use it to get pageable list of jobs by
 
 *If the server is not reachable, but you want to test it, so don't be shy to write me at `oleksii.shevchenko.2000@gmail.com` and I will quickly make it reachable.*
 
-
+---
 <!-- TOC -->
   * [API Endpoints](#api-endpoints)
     * [Get All Jobs](#get-all-jobs)
@@ -28,7 +28,7 @@ Then for example you can use it to get pageable list of jobs by
   * [Maintaining Database](#maintaining-database)
   * [Deployment](#deployment)
 <!-- TOC -->
-
+---
 
 ## API Endpoints
 ### Get All Jobs
