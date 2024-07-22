@@ -1,0 +1,20 @@
+version: "3.9"
+name: face_it-task
+
+services:
+  backend:
+    build:
+      context: ./
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN:
+
+networks:
+  defailt:
+    name: face_it-task-network

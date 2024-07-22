@@ -1,5 +1,34 @@
-*this application is task for applying job in [Face IT](https://jobs.dou.ua/companies/faceit/). 
+*this application is task for applying for a job in [Face IT](https://jobs.dou.ua/companies/faceit/). 
 Task Requirements [here](https://docs.google.com/document/d/1Ukb4yhGjhZs6eKO4x1cR5LMaSlor0k47d6rvqsAvq1U/edit)*
+
+Currently, this project is deployed on my personal laptop through Cloudflare tunnel. 
+Base url is
+`https://faceit-task.geotalker.com/`  
+Then for example you can use it to get pageable list of jobs by  
+`https://faceit-task.geotalker.com/job/all?page=2&size=75`
+
+*If the server is not reachable, but you want to test it, so don't be shy to write me at `oleksii.shevchenko.2000@gmail.com` and I will quickly make it reachable.*
+
+
+<!-- TOC -->
+  * [API Endpoints](#api-endpoints)
+    * [Get All Jobs](#get-all-jobs)
+      * [Overview](#overview)
+      * [HTTP Method](#http-method)
+      * [Request Parameters](#request-parameters)
+      * [Response Example](#response-example)
+    * [Get Top Jobs](#get-top-jobs)
+      * [Overview](#overview-1)
+      * [HTTP Method](#http-method-1)
+      * [Response Example](#response-example-1)
+    * [Get location stats](#get-location-stats)
+      * [Overview](#overview-2)
+      * [HTTP Method](#http-method-2)
+      * [Response Example](#response-example-2)
+  * [Maintaining Database](#maintaining-database)
+  * [Deployment](#deployment)
+<!-- TOC -->
+
 
 ## API Endpoints
 ### Get All Jobs
@@ -79,3 +108,8 @@ H2 in memory database is used. In [Arbeitnow API](https://www.arbeitnow.com/api/
 > Use `?page=` to paginate. Read more information here: https://www.arbeitnow.com/blog/job-board-api"
 
 So local H2 database also updates every hour. 
+
+## Deployment
+- **Dockerfile** provides fast containerization deployment of this application.
+- **docker-compose.yml** up server by mentioned Dockerfile, and also provide service that [cloudflared](https://hub.docker.com/r/cloudflare/cloudflared) 
+service for simply getting access to application by public domain thought [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/)
