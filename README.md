@@ -110,6 +110,6 @@ H2 in memory database is used. In [Arbeitnow API](https://www.arbeitnow.com/api/
 So local H2 database also updates every hour. 
 
 ## Deployment
-- **Dockerfile** provides fast containerization deployment of this application.
+- There are **Dockerfile** used for deployment.
 - **docker-compose.yml** up server by mentioned Dockerfile, and also provide service that [cloudflared](https://hub.docker.com/r/cloudflare/cloudflared) 
 service for simply getting access to application by public domain thought [Cloudflare Tunnel](https://www.cloudflare.com/products/tunnel/)
